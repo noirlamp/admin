@@ -39,6 +39,15 @@ export default [
         }
       },
       {
+        path: 'department',
+        name: 'Department',
+        component: () => import('@/views/System/Department.vue'),
+        meta: {
+          title: '部门管理',
+          icon: 'mingcute:department-fill'
+        }
+      },
+      {
         path: 'role',
         name: 'Role',
         component: () => import('@/views/System/Role.vue'),
@@ -59,10 +68,42 @@ export default [
     ]
   },
   {
-    path: '/feat',
+    path: '/component',
+    name: 'Component',
+    component: Layout,
+    redirect: '/component/common',
+    meta: {
+      title: '组件',
+      menu: true,
+      alwaysShow: true,
+      icon: 'material-symbols:layers-rounded'
+    },
+    children: [
+      {
+        path: 'common',
+        name: 'Common',
+        component: () => import('@/views/Component/Common.vue'),
+        meta: {
+          title: '基础组件',
+          icon: 'material-symbols:width-normal'
+        }
+      },
+      {
+        path: 'icon',
+        name: 'Icon',
+        component: () => import('@/views/Component/Icon.vue'),
+        meta: {
+          title: '图标应用',
+          icon: 'material-symbols:radio-button-checked'
+        }
+      }
+    ]
+  },
+  {
+    path: '/feature',
     name: 'Feature',
     component: Layout,
-    redirect: '/feat/icons',
+    redirect: '/feature/print',
     meta: {
       title: '功能',
       menu: true,
@@ -71,21 +112,21 @@ export default [
     },
     children: [
       {
-        path: 'icons',
-        name: 'Icons',
-        component: () => import('@/views/Feature/Icons.vue'),
-        meta: {
-          title: '图标应用',
-          icon: 'material-symbols:radio-button-checked'
-        }
-      },
-      {
         path: 'print',
         name: 'Print',
         component: () => import('@/views/Feature/Print.vue'),
         meta: {
           title: '打印',
           icon: 'material-symbols:print-rounded'
+        }
+      },
+      {
+        path: 'colorPalette',
+        name: 'ColorPalette',
+        component: () => import('@/views/Feature/ColorPalette.vue'),
+        meta: {
+          title: '获取主题色',
+          icon: 'material-symbols:format-paint-rounded'
         }
       },
       {
@@ -104,38 +145,6 @@ export default [
         meta: {
           title: '音频播放',
           icon: 'material-symbols:audio-file-rounded'
-        }
-      }
-    ]
-  },
-  {
-    path: '/comp',
-    name: 'Components',
-    component: Layout,
-    redirect: '/comp/common',
-    meta: {
-      title: '组件',
-      menu: true,
-      alwaysShow: true,
-      icon: 'material-symbols:layers-rounded'
-    },
-    children: [
-      {
-        path: 'common',
-        name: 'Common',
-        component: () => import('@/views/Components/Common.vue'),
-        meta: {
-          title: '基础组件',
-          icon: 'material-symbols:width-normal'
-        }
-      },
-      {
-        path: 'color-palette',
-        name: 'ColorPalette',
-        component: () => import('@/views/Components/ColorPalette.vue'),
-        meta: {
-          title: '获取主题色',
-          icon: 'material-symbols:format-paint-rounded'
         }
       }
     ]

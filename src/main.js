@@ -7,6 +7,7 @@ import { pinia } from '@/store'
 
 import './styles/tailwind.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
+import './styles/theme.scss'
 
 import 'virtual:svg-icons-register'
 

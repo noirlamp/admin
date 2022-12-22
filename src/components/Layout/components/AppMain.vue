@@ -1,11 +1,13 @@
 <template>
   <router-view v-slot="{ Component, route }">
-    <div>{{ route.name }}</div>
+    <div>{{ Component.name }}</div>
     <transition
       name="fade"
       mode="out-in"
     >
-      <el-main :key="route.name">
+      <el-main
+        :key="route.name"
+      >
         <component
           :is="Component"
           :key="route.fullPath"
