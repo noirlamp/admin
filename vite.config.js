@@ -43,12 +43,11 @@ const generateEnv = (env) => Object.keys(env).reduce((acc, key) => {
 }, {})
 
 export default defineConfig(({ mode }) => {
-
   process.env.NODE_ENV = mode
 
   const root = process.cwd()
 
-  let AppInfo = {
+  const AppInfo = {
     pkg: { name, version, dependencies, devDependencies }
   }
 
@@ -91,7 +90,7 @@ export default defineConfig(({ mode }) => {
     })
   ]
 
-  let config = {
+  const config = {
     root,
     base: VITE_BASE || '/',
     define: {
@@ -141,7 +140,7 @@ export default defineConfig(({ mode }) => {
       cssTarget: 'chrome80',
       outDir: VITE_OUTPUT || 'dist',
       chunkSizeWarningLimit: 2000,
-      sourcemap: true,
+      sourcemap: true
     }
   }
 
